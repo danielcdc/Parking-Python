@@ -87,7 +87,8 @@ class ParkingService:
                     return x
                 else:
                     return False
-
+                
+    # INCOMPLETO
     # Calcula la cuantía a cobrar al ticket y la contabiliza.
     def anotar_cobro(self, ticket_a_cobrar):
         tiempo_aparcado = datetime.today() - ticket_a_cobrar.fecha_deposito
@@ -95,32 +96,13 @@ class ParkingService:
         precio = 0
         if ticket_a_cobrar.tipo_vehiculo == "Turismo":
             precio = tiempo_aparcado*self.precios.get("Turismo")
-
+        pass
 
     def elegir_vehiculo(self):
-        control = True
-        select = ""
-        vehiculo = {
-            1: "Turismo",
-            2: "Motocicleta",
-            3: "VPMR"
-        }
-        while control:
-            try:
-                vista.elegir_vehiculo_print()
-                option = int(input())
-                if option not in range(0, 3):
-                    print("Por favor, introduzca uno de los valores indicados")
-                elif option == 0:
-                    control = False
-                else:
-                    select = vehiculo.get(option)
-                    return select
-            except ValueError:
-                print("Valor introducido erróneo, por favor, introduzca un valor de los indicados.")
+        pass
 
 # Testing
-if __name__ == "__main__":
+# if __name__ == "__main__":
 #     repositorio_parking = ParkingRepository()
 #     servicio = ParkingService(repositorio_parking)
 #     servicio.informar_plazas_libres()
