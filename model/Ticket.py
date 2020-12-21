@@ -3,14 +3,17 @@ from datetime import *
 
 
 class Ticket:
-    def __init__(self, id_plaza):
+    # Constructor utilizado en la app
+    def __init__(self, id_plaza, tipo_vehiculo):
         self.__id_plaza = id_plaza
+        self.__tipo_vehiculo = tipo_vehiculo
         self.__matricula = Utils.generar_matricula()
         self.__pin = Utils.generar_pin()
         self.__fecha_deposito = datetime.now()
         self.__fecha_salida = None
         self.__facturado = None
 
+    # Constructor para testing
     def __init__(self, id_plaza, fecha_deposito, fecha_salida, facturado):
         self.__id_plaza = id_plaza
         self.__matricula = Utils.generar_matricula()
@@ -26,6 +29,14 @@ class Ticket:
     @id_plaza.setter
     def id_plaza(self, value):
         self.__id_plaza = value
+
+    @property
+    def tipo_vehiculo(self):
+        return self.__tipo_vehiculo
+
+    @tipo_vehiculo.setter
+    def tipo_vehiculo(self, value):
+        self.__tipo_vehiculo = value
 
     @property
     def matricula(self):

@@ -33,8 +33,8 @@ class TicketRepository:
         self.__tickets = value
 
     # Métodos CRUD
-    def create_ticket(self, id_plaza):
-        self.tickets.append(Ticket.Ticket(id_plaza))
+    def create_ticket(self, id_plaza, tipo_vehiculo):
+        self.tickets.append(Ticket.Ticket(id_plaza, tipo_vehiculo))
 
     # Para instanciar tickets con datos específicados por el usuario.
     def create_ticket_prueba(self, id_plaza, fecha_deposito, fecha_salida, facturado):
@@ -61,9 +61,9 @@ class TicketRepository:
         self.fichero.close()
 
     # Métodos de búsqueda
-    def find_by_id(self, id):
+    def find_by_pin(self, pin):
         for x in self.tickets:
-            if x.Ticket.id_plaza == id:
+            if x.Ticket.pin == pin:
                 return x
         return False
 
