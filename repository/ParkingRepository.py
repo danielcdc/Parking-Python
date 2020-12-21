@@ -53,6 +53,7 @@ class ParkingRepository:
         pickle.dump(self.parking, self.fichero)
         self.fichero.close()
 
-if __name__ == "__main__":
-    parking_repository = ParkingRepository()
-    print(parking_repository.parking)
+# Testing
+# if __name__ == "__main__":
+#     parking_repository = ParkingRepository()
+#     print(parking_repository.parking)
